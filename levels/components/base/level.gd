@@ -1,14 +1,21 @@
 extends Node2D
-export var palette : Image
+
+export var defaultPalette : Image
+export var currentPalette : Image
+
+signal paletteChanged
 
 func _ready() -> void:
-	if palette.get_width() != 4:
-		printerr("level.gd, ", name, " incorrectTexture: ", palette.resource_path)
+	changePalette()
 
 func getColor(index : int = 0) -> Color:
-	palette.lock()
+	currentPalette.lock()
 	if index < 0 or index > 4:
 		printerr("level.gd, index is incorrent: ", index)
-		return palette.get_pixel(4, 0)
+		return currentPalette.get_pixel(4, 0)
 	else:
-		return palette.get_pixel(index, 0)
+		return currentPalette.get_pixel(index, 0)
+
+func changePalette(newPalette: Image = defaultPalette):
+	currentPalette = newPalette
+	emit_signal("paletteChanged")

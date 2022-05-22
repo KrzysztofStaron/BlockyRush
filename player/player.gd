@@ -7,9 +7,7 @@ export var jumpHeight := -1300
 var velocity : Vector2
 
 func _ready():
-	var color : Color = get_tree().get_nodes_in_group("level")[0].getColor(3)
-	$Sprite.material.set_shader_param("color", color)
-	
+	get_tree().get_nodes_in_group("level")[0].connect("paletteChanged", self, "updateColor")
 	resetPosition()
 
 func _process(delta):
@@ -32,6 +30,7 @@ func _process(delta):
 
 func resetPosition():
 	position = get_tree().get_nodes_in_group("level")[0].get_node("startPoint").position
+	get_tree().get_nodes_in_group("level")[0].changePalette()
 
 func die(_body := Node.new()):
 	print("spike kill")
@@ -39,3 +38,7 @@ func die(_body := Node.new()):
 
 func _on_area_2d_body_entered(_body):
 	die()
+
+func updateColor():
+	var color : Color = get_tree().get_nodes_in_group("level")[0].getColor(3)
+	$Sprite.material.set_shader_param("color", color)
