@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/en4-1x.png-49f6ef924659d2baaffc932c61485d4e.image"
+
+[deps]
+
+source_file="res://levels/level1/en4-1x.png"
+dest_files=[ "res://.import/en4-1x.png-49f6ef924659d2baaffc932c61485d4e.image" ]
+
+[params]
+

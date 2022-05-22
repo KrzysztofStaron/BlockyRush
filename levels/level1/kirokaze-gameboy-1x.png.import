@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/kirokaze-gameboy-1x.png-9d8e80f98c2c8003f03b37c57f40c2c9.image"
+
+[deps]
+
+source_file="res://levels/level1/kirokaze-gameboy-1x.png"
+dest_files=[ "res://.import/kirokaze-gameboy-1x.png-9d8e80f98c2c8003f03b37c57f40c2c9.image" ]
+
+[params]
+

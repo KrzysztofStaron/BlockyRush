@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://levels/level1/level1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://levels/level1/background.png" type="Texture" id=3]
+[ext_resource path="res://levels/components/tiles/ImageColor.gd" type="Script" id=4]
+[ext_resource path="res://default_env.tres" type="Environment" id=5]
+
+[node name="main" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_limit_end = Vector2( 1920, 1080 )
+
+[node name="background" type="TextureRect" parent="ParallaxBackground"]
+show_behind_parent = true
+margin_right = 1980.0
+margin_bottom = 1080.0
+texture = ExtResource( 3 )
+script = ExtResource( 4 )
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 539, 474 )
+z_index = 1
+
+[node name="Camera2D" type="Camera2D" parent="player" groups=["camera"]]
+z_index = -5
+current = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+offset_v = -1.0
+drag_margin_top = 1.0
+drag_margin_bottom = 0.6
+
+[node name="level1" parent="." instance=ExtResource( 2 )]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 5 )
