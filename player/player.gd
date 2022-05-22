@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-export var gravity := 4000
-export var speed := 600
-export var jumpHeight := -1100
+export var gravity := 4120
+export var speed := 720
+export var jumpHeight := -1300
 
 var velocity : Vector2
 
@@ -12,11 +12,11 @@ func _ready():
 	
 	resetPosition()
 
-func _physics_process(delta):
+func _process(delta):
 	velocity.y += gravity * delta
 	position.x += speed * delta
 	
-	if Input.is_action_pressed("jump") and len($groundSensor.get_overlapping_bodies()) > 0:
+	if Input.is_action_pressed("jump") and (len($groundSensor.get_overlapping_bodies()) > 0 or len($groundSensor.get_overlapping_areas()) > 0):
 		velocity.y = jumpHeight
 		$AnimationTree.get("parameters/playback").travel("jump")
 	
