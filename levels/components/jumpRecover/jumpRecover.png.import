@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/block.png-1cb259a496c935f4c72f8bd0f5fd2be9.stex"
+path="res://.import/jumpRecover.png-bae3a0ad9baba75448a240ba6cfdf515.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/components/tiles/block.png"
-dest_files=[ "res://.import/block.png-1cb259a496c935f4c72f8bd0f5fd2be9.stex" ]
+source_file="res://levels/components/jumpRecover/jumpRecover.png"
+dest_files=[ "res://.import/jumpRecover.png-bae3a0ad9baba75448a240ba6cfdf515.stex" ]
 
 [params]
 
@@ -20,8 +20,8 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
-flags/mipmaps=true
+flags/filter=true
+flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true

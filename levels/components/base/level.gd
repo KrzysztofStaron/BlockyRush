@@ -3,7 +3,7 @@ extends Node2D
 export var defaultPalette : Image
 export var currentPalette : Image
 
-signal paletteChanged
+signal paletteChanged(speed)
 
 func _ready() -> void:
 	changePalette()
@@ -16,6 +16,6 @@ func getColor(index : int = 0) -> Color:
 	else:
 		return currentPalette.get_pixel(index, 0)
 
-func changePalette(newPalette: Image = defaultPalette):
+func changePalette(newPalette: Image = defaultPalette, speed := 1.0):
 	currentPalette = newPalette
-	emit_signal("paletteChanged")
+	emit_signal("paletteChanged", speed)

@@ -2,9 +2,9 @@
 
 [ext_resource path="res://levels/components/base/level.gd" type="Script" id=1]
 [ext_resource path="res://shaders/mixingColorsByBrightnes/mixingColorsByBrightnes.gdshader" type="Shader" id=2]
-[ext_resource path="res://levels/components/tiles/tileMapColor.gd" type="Script" id=3]
-[ext_resource path="res://levels/components/tiles/spike.png" type="Texture" id=5]
-[ext_resource path="res://levels/components/tiles/block.png" type="Texture" id=6]
+[ext_resource path="res://levels/components/scripts/tileMapColor.gd" type="Script" id=3]
+[ext_resource path="res://levels/components/textures/spike.png" type="Texture" id=5]
+[ext_resource path="res://levels/components/textures/block.png" type="Texture" id=6]
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 2 )
